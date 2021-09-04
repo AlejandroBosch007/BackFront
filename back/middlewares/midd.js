@@ -10,14 +10,12 @@ const corsOption = {
         }else {
             callback(new Error('No autorizado por Cors'))
         }
-        
-
     }
 }
 
 log = function (req,res,next) {
     const {method,path,query,body} = req;
-    //console.log(`${method} - ${path} - ${JSON.stringify(query)} - ${JSON.stringify(body)}`);
+    console.log(`${method} - ${path} - ${JSON.stringify(query)} - ${JSON.stringify(body)}`);
     next()
 }
 

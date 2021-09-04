@@ -26,7 +26,16 @@ async function getCart() {
 getCart()
 
 
-async function agregarProducto() {
+
+
+async function agregarProducto(Articulo) {
+    await fetch('http://localhost:3000/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(Articulo)
+    });
  
 }
 async function eliminarProducto(id) {
@@ -37,14 +46,12 @@ async function eliminarProducto(id) {
 
 
 
+let Articulo = {
+    id:"KIKIww1",
+    nombre: "Tenis Nike",
+    cantidad: 1,
+    precio: 500,
+    clave:"Una clave para protegernos a todos"
+}
 
-getCart()
-
-
-
-getPaises()
-getPaises()
-getPaises()
-getPaises()
-getPaises()
-getPaises()
+agregarProducto(Articulo)
