@@ -38,7 +38,6 @@ const buscaProducto = function (id) {
 const borraProducto = function (id) {
     if(Cart.hasOwnProperty(id)){
         console.log(Cart[id]);
-
     if (Cart[id].cantidad  > 1) {
         Cart[id].cantidad  = Cart[id].cantidad  - 1;
         return true
